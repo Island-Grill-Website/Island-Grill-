@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "task": "Display menu items with order buttons on the frontend",
+    "status": "pending"
+  },
+  {
+    "id": 2,
+    "task": "Implement cart/order review UI so users can see and update their order before checkout",
+    "status": "pending"
+  },
+  {
+    "id": 3,
+    "task": "Add checkout button that triggers an API call to submit the order",
+    "status": "pending"
+  },
+  {
+    "id": 4,
+    "task": "Create backend order model to handle order data (server/models/Order.js)",
+    "status": "pending"
+  },
+  {
+    "id": 5,
+    "task": "Create backend order controller for order creation and retrieval (server/controllers/orderController.js)",
+    "status": "pending"
+  },
+  {
+    "id": 6,
+    "task": "Add backend order routes for creating and fetching orders (server/routes/orderRoutes.js)",
+    "status": "pending"
+  },
+  {
+    "id": 7,
+    "task": "Ensure database has an 'orders' table/collection and update schema if needed",
+    "status": "pending"
+  },
+  {
+    "id": 8,
+    "task": "Connect frontend to backend: send order data to backend and handle response",
+    "status": "pending"
+  },
+  {
+    "id": 9,
+    "task": "Show confirmation or error message to user after order submission",
+    "status": "pending"
+  },
+  {
+    "id": 10,
+    "task": "Test the full order flow: add items, review cart, submit order, verify backend receives and stores order",
+    "status": "pending"
+  },
+  {
+    "id": 11,
+    "task": "(Optional) Tie orders to user accounts if authentication is required",
+    "status": "pending"
+  }
+] 

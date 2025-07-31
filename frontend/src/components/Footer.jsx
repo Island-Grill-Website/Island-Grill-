@@ -1,71 +1,72 @@
-import Link from "next/link"
-import { Facebook, Instagram, Twitter } from "lucide-react"
+import { Link } from "react-router-dom"
+
+const quickLinks = [
+  { href: "/", label: "Home" },
+  { href: "/order", label: "Order" },
+  { href: "#menu", label: "Menu" },
+  { href: "#about", label: "About" },
+]
+
+const contactInfo = ["123 4th Street", "Brooklyn NY 10013", "(555) 123-4567", "info@islandgrill.com"]
 
 export function Footer() {
+  const currentYear = new Date().getFullYear()
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-orange-400 mb-4">Bella Vista</h3>
-            <p className="text-gray-300 mb-4 max-w-md">
-              Authentic Italian cuisine in the heart of Little Italy. Experience the taste of tradition with every bite.
+            <Link
+              to="/"
+              className="inline-block text-2xl font-bold text-green-500 hover:text-green-400 transition-colors mb-4"
+            >
+              Island Grill
+            </Link>
+            <p className="text-green-200 mb-6 max-w-md leading-relaxed">
+              Authentic Caribbean cuisine in the heart of Brooklyn. Experience the taste of tradition with every bite.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-gray-300 hover:text-orange-400">
-                <Facebook className="h-6 w-6" />
-              </Link>
-              <Link href="#" className="text-gray-300 hover:text-orange-400">
-                <Instagram className="h-6 w-6" />
-              </Link>
-              <Link href="#" className="text-gray-300 hover:text-orange-400">
-                <Twitter className="h-6 w-6" />
-              </Link>
-            </div>
+            <div className="flex space-x-4">{/* Add social media icons here when needed */}</div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-green-400 mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <Link href="#home" className="text-gray-300 hover:text-orange-400">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="#menu" className="text-gray-300 hover:text-orange-400">
-                  Menu
-                </Link>
-              </li>
-              <li>
-                <Link href="#about" className="text-gray-300 hover:text-orange-400">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="text-gray-300 hover:text-orange-400">
-                  Contact
-                </Link>
-              </li>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  {link.href.startsWith('#') ? (
+                    <a href={link.href} className="text-green-300 hover:text-green-500 transition-colors">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link to={link.href} className="text-green-300 hover:text-green-500 transition-colors">
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
+          {/* Contact Information */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>123 Italian Street</li>
-              <li>Little Italy, NY 10013</li>
-              <li>(555) 123-4567</li>
-              <li>info@bellavista.com</li>
+            <h4 className="text-lg font-semibold text-green-400 mb-4">Contact Info</h4>
+            <ul className="space-y-2 text-green-200">
+              {contactInfo.map((info, index) => (
+                <li key={index} className="leading-relaxed">
+                  {info}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2024 Bella Vista Restaurant. All rights reserved.</p>
+        {/* Copyright */}
+        <div className="border-t border-green-800 mt-8 pt-8 text-center text-green-200">
+          <p>&copy; {currentYear} Island Grill Restaurant. All rights reserved.</p>
         </div>
       </div>
     </footer>
   )
 }
- 

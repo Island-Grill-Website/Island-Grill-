@@ -1,8 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate, Navigate, Link } from "react-router-dom";
-import CurrentUserContext from "../contexts/current-user-context";
-import { registerUser } from "../adapters/auth-adapter";
-import "../styles/SignUp.css";
+
+
 
 export default function SignUpPage() {
   const navigate = useNavigate();
