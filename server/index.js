@@ -3,11 +3,12 @@ const express = require('express');
 const cors = require('cors');
 const usersRouter = require('./routes/users');
 const menuRouter = require('./routes/menu');
-const ordersRouter = require('./routes/orders');
+const ordersRouter = require('./routes/orderRoutes');
 const orderMenuRouter = require('./routes/order_menu');
 
 const app = express();
-const PORT = process.env.PORT || 5174;
+// TODO add the static files for the frontend from the dist folder 
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
