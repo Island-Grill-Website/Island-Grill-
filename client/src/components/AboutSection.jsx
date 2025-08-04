@@ -32,14 +32,10 @@ export function About() {
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
             <p className="text-lg text-gray-600 mb-6">
-              Founded in 1985 by the Rossi family, Bella Vista has been serving authentic Italian cuisine to our
-              community for over three decades. Our passion for traditional flavors and warm hospitality creates an
-              unforgettable dining experience.
+              Founded in 2000
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              Chef Marco Rossi brings recipes from his hometown in Tuscany, using only the finest imported ingredients
-              alongside fresh local produce. Every dish tells a story of tradition, family, and love for authentic
-              Italian cooking.
+              Our Chefs bring
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

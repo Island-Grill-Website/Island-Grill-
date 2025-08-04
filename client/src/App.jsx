@@ -9,6 +9,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/order" element={<div>Order Page Coming Soon!</div>} />
+          
         </Routes>
       </div>
     </Router>
