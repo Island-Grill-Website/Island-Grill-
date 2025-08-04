@@ -33,10 +33,21 @@
 - As a user, I can get to know the people who work at the restaurant.
 - As a user, I can place an order using a form.
 
+### 🔐 Authentication Must-Haves
+- As a user, I can create an account with my email and password.
+- As a user, I can log in to my account using my email and password.
+- As a user, I can log out of my account.
+- As a user, I can view my order history when I'm logged in.
+- As a user, I can save my contact information for faster future orders.
+- As a user, I can reset my password if I forget it.
+
 ### 💡 Nice-to-Haves
 - As a user, I can view the restaurant's social media links.
 - As a user, I can read customer reviews or ratings.
 - As a user, I can take a virtual tour (via image gallery or video).
+- As a user, I can receive email confirmations for my orders.
+- As a user, I can save favorite menu items to my profile.
+- As a user, I can receive loyalty rewards for frequent orders.
 
 ## Technical Requirements & Feature Descriptions
 
@@ -45,11 +56,30 @@
 | **🏠 Landing Page** | Includes buttons or nav links that route to Menu, About, and Order pages. |
 | **🍽️ Menu Page** | Displays images and descriptions of the food offerings. |
 | **👨‍🍳 About Page** | Highlights the restaurant's story, decor, and team. |
-| **🧾 Order Page** | Contains a form where users can input food selections, pickup time, and contact info. No backend needed for MVP (submission may show confirmation message only). |
+| **🧾 Order Page** | Contains a form where users can input food selections, pickup time, and contact info. Requires authentication for order history tracking. |
+| **🔐 Authentication System** | JWT-based authentication with secure session management. Includes login, signup, logout, and password reset functionality. |
+| **👤 User Profile** | Displays user information, order history, and saved preferences. Requires authentication to access. |
+
+## Authentication Technical Requirements
+
+### Backend Authentication
+- **JWT Implementation**: Use JSON Web Tokens for stateless authentication
+- **Session Management**: Implement secure session handling with refresh tokens
+- **Password Security**: Hash passwords using bcrypt with salt rounds
+- **Token Storage**: Store JWT tokens securely in HTTP-only cookies
+- **Middleware**: Create authentication middleware for protected routes
+- **Error Handling**: Proper error responses for authentication failures
+
+### Frontend Authentication
+- **Context Management**: React context for user authentication state
+- **Protected Routes**: Route guards for authenticated-only pages
+- **Token Management**: Secure token storage and automatic refresh
+- **Form Validation**: Client-side validation for login/signup forms
+- **Loading States**: Loading indicators during authentication processes
 
 ## Deployment Plan
 
-This project can and should be deployed as a static web app using a service like GitHub Pages, Netlify, or Vercel.
+This project requires a full-stack deployment with both frontend and backend services. Frontend can be deployed on Vercel/Netlify, backend on Heroku/Railway/DigitalOcean.
 
 ## Next Steps
 
@@ -59,4 +89,5 @@ This project can and should be deployed as a static web app using a service like
 | Finish basic wireframes (mobile + desktop) | High | Caleb | We've done this before — start with layout blocks for each page |
 | Build layout with React or vanilla HTML/CSS | Medium | Caleb | Start with one page at a time |
 | Add interactivity (page routing + form) | Medium | Caleb | React Router if using React |
+| Implement authentication system | High | Caleb | JWT + sessions, user management |
 | Prep for deployment | Medium | Caleb + Instructor | Pick a platform and deploy MVP | 
