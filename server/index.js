@@ -10,6 +10,11 @@ const app = express();
 // TODO add the static files for the frontend from the dist folder 
 const PORT = process.env.PORT || 3000;
 
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../client/dist'))); // Serve static assets from the dist folder of the frontend
+
+
 app.use(cors());
 app.use(express.json());
 
