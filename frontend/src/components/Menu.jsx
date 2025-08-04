@@ -1,5 +1,4 @@
 import React from "react";
-
 const menuData = [
   {
     category: "Starters",
@@ -53,39 +52,34 @@ const menuData = [
     ],
   },
 ];
-
 export function Menu() {
   return (
-    <div className="min-h-screen bg-black py-10 px-4">
-      <h1 className="text-4xl font-extrabold text-center text-green-500 mb-10">Our Menu</h1>
-      <div className="max-w-5xl mx-auto space-y-16">
-        {menuData.map((section) => (
-          <div key={section.category}>
-            <h2 className="text-2xl font-bold text-green-400 mb-6">{section.category}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {section.items.map((item) => (
-                <div
-                  key={item.name}
-                  className="bg-gray-900 rounded-xl shadow-md flex flex-col md:flex-row items-center p-4"
-                >
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-32 h-32 object-cover rounded-lg mb-4 md:mb-0 md:mr-6"
-                  />
-                  <div className="flex-1">
-                    <div className="flex justify-between items-center mb-2">
-                      <h3 className="text-xl font-semibold text-white">{item.name}</h3>
-                      <span className="text-lg font-bold text-green-400">{item.price}</span>
-                    </div>
-                    <p className="text-green-200">{item.description}</p>
-                  </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {menuData.map((category) => (
+        <div key={category.category} className="category">
+          <h2 className="text-xl font-semibold mb-4">{category.category}</h2>
+          {category.items.map((item) => (
+            <div key={item.name} className="card group">
+              <div className="relative overflow-hidden rounded-t-xl">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-semibold">{item.name}</h3>
+                  <p className="text-island-200">{item.price}</p>
                 </div>
-              ))}
+              </div>
+              <div className="p-6">
+                <p className="text-gray-600 mb-4">{item.description}</p>
+                <button className="btn-primary w-full">Add to Cart</button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }

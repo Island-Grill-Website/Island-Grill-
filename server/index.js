@@ -7,7 +7,7 @@ const ordersRouter = require('./routes/orders');
 const orderMenuRouter = require('./routes/order_menu');
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5174;
 
 app.use(cors());
 app.use(express.json());

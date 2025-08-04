@@ -1,3 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      @apply font-body text-gray-900 bg-white;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      @apply font-display font-semibold;
+    }
+  }
+  
+  @layer components {
+    .btn-primary {
+      @apply bg-island-600 hover:bg-island-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-island-500 focus:ring-offset-2;
+    }
+    
+    .btn-secondary {
+      @apply bg-transparent border-2 border-island-600 text-island-600 hover:bg-island-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-island-500 focus:ring-offset-2;
+    }
+    
+    .card {
+      @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+    }
+    
+    .section-padding {
+      @apply py-16 md:py-24;
+    }
+    
+    .container-custom {
+      @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+  }
+  
+  @layer utilities {
+    .text-gradient {
+      @apply bg-gradient-to-r from-island-600 to-sunset-500 bg-clip-text text-transparent;
+    }
+    
+    .bg-pattern {
+      background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.1) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+  }
